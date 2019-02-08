@@ -243,7 +243,7 @@
 		<div class="col-lg-6 col-md-6">
 			<div class="mu-about-us-left">                            
 			<div class="mu-title">
-			<h3>Top 10 Most Answered Questions, among top 50 Voted Questions on <i>"<?php echo $search_query; ?>"</i></h3>                
+			<h3>Top 10 Mostly used Links of Question (Frequent)<i>"<?php echo $search_query; ?>"</i></h3>                
 			</div>
 			  <ul>
 		<?php
