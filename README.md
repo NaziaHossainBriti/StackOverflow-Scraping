@@ -6,7 +6,7 @@ This is a '.php' based web application which contains one page. By default this 
 How to Start:
 1. We need apache server to run this application. Here "xampp v.3.22" has been used for apache. After installing xampp, there will be a folder in the installation folder (e.g. C:\xampp\htdocs). In the "htdocs" folder, we have to keep the project file and so the link will be "C:\xampp\htdocs\stackoverflow".
 2. After installing xampp, we need to start apache server.
-3. Then in the url bar of our browser, type "http://localhost/stackoverflow/home.php" and the application will start.
+3. Then in the url bar of our browser we have to type "http://localhost/StackOverflow-Scraping-master/home.php" (if we download and run this project directly) and the application will start.
 
 Features:
 1. Extract clickable titles of 10 newest posts of any tags (default: android) with the asking time. After clicking on any title, this will go to the full thread of that question-answer in stackoverflow website.
