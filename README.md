@@ -12,7 +12,7 @@ Features:
 1. Extract clickable titles of 10 newest posts of any tags (default: android) with the asking time. After clicking on any title, this will go to the full thread of that question-answer in stackoverflow website.
 2. Extract clickable titles of 10 most voted question in the past week of any tags (default: android) with the number of votes. After clicking on any title, this will go to the full thread of that question-answer in stackoverflow website.
 3. New feature: Extract clickable titles of 10 most answered questions in top 50 voted questions of any tags (default: android) with number of answers. After clicking on any title, this will go to the full thread of that question-answer in stackoverflow website.
-4. New feature: Extract top 10 questions with most links in the order of high reputation score with the asker name. After clicking on any title, this will go to the full thread of that question-answer in stackoverflow website.
+4. New feature: Extract top 10 questions with most links with the asker name. After clicking on any title, this will go to the full thread of that question-answer in stackoverflow website.
 
 Note:
 This application is based on scraping the stackoverflow website. Here, "simplehtmldom_1_8_1.php" has been used for extracting html code from another website. While scraping, it takes time to load the page. 
