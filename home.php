@@ -117,7 +117,7 @@
 								$question_title = $element->find('.question-hyperlink',0)->plaintext;
 								$question_link = $element->find('a',0)->href;
 								$question_ago = $element->find('.user-action-time',0)->plaintext;
-								echo '<li><a important!" target="blank" href="https://stackoverflow.com/'.$question_link.'">'.$question_title.'</a> ('.$question_ago.')</li>';
+								echo '<li><a important!" target="blank" href="https://stackoverflow.com'.$question_link.'">'.$question_title.'</a> ('.$question_ago.')</li>';
 							}
 							$count++;
 						}
@@ -177,7 +177,7 @@
 									$question_title = $element->find('.question-hyperlink',0)->plaintext;
 									$question_link = $element->find('a',0)->href;
 									$vote_count = $element->find('.vote-count-post',0)->plaintext;
-									$str = '<li><a target="blank" href="https://stackoverflow.com/'.$question_link.'">'.$question_title.'</a> (votes: '.$vote_count.')</li>';
+									$str = '<li><a target="blank" href="https://stackoverflow.com'.$question_link.'">'.$question_title.'</a> (votes: '.$vote_count.')</li>';
 													 
 									$questions_array1[$str] = (int)$vote_count;
 								} //end of foreach
@@ -216,12 +216,11 @@
 							$html1 = file_get_html('https://stackoverflow.com/questions/tagged/'.$search_query.'?sort=votes&pageSize=50');
 							//source: https://stackoverflow.com/questions/28896635/php-simplehtmldom-how-to-get-value-from-div-by-class-name-inside-of-another-di
 									  
-							//changes this in order to scrap the number of votes
 							foreach($html1->find('div[class=question-summary]') as $element){
 								$question_title = $element->find('.question-hyperlink',0)->plaintext;
 								$question_link = $element->find('a',0)->href;
 								$answer_accepted = $element->find('.status',0)->plaintext;
-								$str = '<li><a target="blank" href="https://stackoverflow.com/'.$question_link.'">'.$question_title.'</a> ('.$answer_accepted.')</li>';
+								$str = '<li><a target="blank" href="https://stackoverflow.com'.$question_link.'">'.$question_title.'</a> ('.$answer_accepted.')</li>';
 								$questions_array1[$str] = (int)$answer_accepted;
 							}
 							arsort($questions_array1);
@@ -240,6 +239,35 @@
 			  </div>
 			  
 		<!-- end Section Top 10 Most Answered Questions, among top 50 Voted Questions on -->
+		<!-- Section Start of 10 Questions with most links-->
+		<div class="col-lg-6 col-md-6">
+			<div class="mu-about-us-left">                            
+			<div class="mu-title">
+			<h3>Top 10 Most Answered Questions, among top 50 Voted Questions on <i>"<?php echo $search_query; ?>"</i></h3>                
+			</div>
+			  <ul>
+		<?php
+			$html1 = file_get_html('https://stackoverflow.com/questions/tagged/'.$search_query.'?sort=frequent&pageSize=50');
+			//source: https://stackoverflow.com/questions/28896635/php-simplehtmldom-how-to-get-value-from-div-by-class-name-inside-of-another-di
+			$count=0;		  
+			foreach($html1->find('div[class=question-summary]') as $element){
+				if($count<10){
+					$score_info = $element->find('.user-details',0)->plaintext;
+					$score_info = preg_replace('!\s+!', ' ', $score_info);
+					$asker = explode(' ',$score_info);
+					$question_title = $element->find('.question-hyperlink',0)->plaintext;
+					$question_link = $element->find('a',0)->href; 
+					$str = '<li><a target="blank" href="https://stackoverflow.com/'.$question_link.'">'.$question_title.'</a> (Asked '.$asker[0].')</li>';
+					
+					echo $str;
+				}
+				$count++;
+			}
+		?>
+			</ul>
+			</div>
+		</div>
+		<!-- Section end of 10 Questions with most links-->
             </div>
           </div>
         </div>
