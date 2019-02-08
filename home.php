@@ -221,7 +221,7 @@
 								$question_title = $element->find('.question-hyperlink',0)->plaintext;
 								$question_link = $element->find('a',0)->href;
 								$answer_accepted = $element->find('.status',0)->plaintext;
-								$str = '<li><a target="blank" href="https://stackoverflow.com/'.$question_link.'">'.$question_title.'</a> (answers: '.$answer_accepted.')</li>';
+								$str = '<li><a target="blank" href="https://stackoverflow.com/'.$question_link.'">'.$question_title.'</a> ('.$answer_accepted.')</li>';
 								$questions_array1[$str] = (int)$answer_accepted;
 							}
 							arsort($questions_array1);
